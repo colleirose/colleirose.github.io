@@ -1,0 +1,19 @@
+---
+layout: default
+title: "Home"
+---
+<p>I solemnly swear that I am up to no good</p>
+<p>CTF writeups and things of interest will be posted here</p>
+<p>CTFTime account: <a href="https://ctftime.org/user/182918" rel="noopener">colleirose</a></p>
+
+<section id="blogPostList">
+    <h2>Posts</h2>
+    {% for post in site.posts %}
+    <div class="postListing">
+        <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p class="post-excerpt">{{ post.content | truncate: 15 }}</p>
+    </div>
+    {% endfor %}
+</section>
+
+<!-- chen fetch ./token.txt is a 1337 hack that pwned CATS -->

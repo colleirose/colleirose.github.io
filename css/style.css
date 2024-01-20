@@ -1,0 +1,82 @@
+html,
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: rgb(40, 40, 40);
+  color: white;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  border: 0;
+}
+
+a {
+  color: #79c0ff;
+  text-decoration: none;
+}
+
+/* Nav bar and footer */
+nav, footer {
+  background: #00a67d;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+nav > a {
+  background: black;
+  color: white;
+  padding: 1%;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* Home page */
+
+#blogPostList {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.postListing {
+  border: 3px solid #00a67d;
+  border-radius: 5px;
+  background: rgb(25, 25, 25);
+  color: #df3079;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+.post-title, .post-title > a {
+  margin: 0;
+}
+
+.post-title > a {
+  text-decoration: none;
+  color: #00a67d;
+}
+
+.post-title > a:hover {
+  color: #46f0c5;
+}
+
+.post-excerpt {
+  color: #f22c3d;
+}

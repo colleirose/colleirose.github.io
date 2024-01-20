@@ -1,0 +1,22 @@
+# This blocks user agents associated with people search engines, advertising, and other unwanted things
+
+# Piplbot, a people search engine
+User-agent: PiplBot
+Disallow: /
+
+# Some kind of advertising shit
+# https://github.com/bunkerity/bunkerweb/blob/ad4533a916aa978416ccaf87ca7fec2021e8dcdf/src/common/core/modsecurity/files/coreruleset/rules/crawlers-user-agents.data#L20-L23C1
+User-agent: GrapeshotCrawler/2.0
+User-agent: grapeFX
+Disallow: /
+
+# Google ad crap
+User-agent: AdsBot-Google
+User-agent: Mediapartners-Google
+Disallow: /
+
+# No proprietary models that refuse to comply with licenses
+# See https://www.eff.org/deeplinks/2023/12/no-robotstxt-how-ask-chatgpt-and-google-bard-not-use-your-website-training
+User-agent: GPTBot
+User-agent: Google-Extended
+Disallow: /
