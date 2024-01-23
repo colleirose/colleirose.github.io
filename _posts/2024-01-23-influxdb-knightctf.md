@@ -6,14 +6,6 @@ permalink: /influxdb-injection-nosql-injection-knightctf-2024
 date: 2024-01-23
 ---
 
-<style>
-    /* images are fairly large in this writeup specifically, but they aren't everywhere, so this change should be applied here only */
-    img {
-        width: 50%;
-        height: 50%;
-    }
-</style>
-
 This is the challenge:
 <br/>
 ![challenge name and description](/assets/img/challenge fluxx.png)
@@ -29,6 +21,7 @@ I search this error online and learn that it's an error related to <a href="http
 <img src="https://cdn.discordapp.com/attachments/1194841726163095565/1198512198323011714/image.png?ex=65bf2c77&is=65acb777&hm=e54a3bc3373d4d041b72b951d42801b3487e256700888636c283a9552efe1ca5&"/>
 
 This also matches up with the challenge name and description:
+<br/>
 ![challenge name and description](/assets/img/challenge fluxx.png)
 
 Searching about SQL injection in InfluxDB, I find <a href="https://rafa.hashnode.dev/influxdb-nosql-injection" rel="noopener">https://rafa.hashnode.dev/influxdb-nosql-injection</a>.
@@ -76,3 +69,16 @@ buckets() |> filter(fn: (r) => r.name =~ /^K.*/ and die(msg:r.name))
 I don't know what the first line does, but the second line calls a function to list buckets called <code>buckets()</code> and filters for buckets with a name that matches the regular expression <code>/^K.*/</code>. If it finds one, it dies with the bucket's name. The third line is a comment.
 
 In retrospect, maybe <code>/^.*/</code> would've worked fine.
+
+<style>
+    /*
+    Images are fairly large in this writeup specifically, but they aren't everywhere, so this change should be applied here only.
+    
+    This can't be included at the top of the code because it'll be transcluded onto the main page by the code that lists recent posts.
+    */
+    
+    img {
+        width: 50%;
+        height: 50%;
+    }
+</style>
