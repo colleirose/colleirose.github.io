@@ -81,7 +81,7 @@ PID	Process	Args
 3044	notmyfault64.e	"C:\Users\siam\Desktop\NotMyFault\notmyfault64.exe"  /crash
 </pre>
 
-I then dumped the memory of the <a href="https://www.lifewire.com/conhost-exe-4158039">conhost process</a> (pid 4888) by running <code>python3 vol.py -f ~/Documents/KnightSquad-001.DMP -o ~/Downloads windows.memmap.Memmap --pid 4888 --dump</code>
+I then dumped the memory of the <a href="https://www.lifewire.com/conhost-exe-4158039" rel="noopener">conhost process</a> (pid 4888) by running <code>python3 vol.py -f ~/Documents/KnightSquad-001.DMP -o ~/Downloads windows.memmap.Memmap --pid 4888 --dump</code>
 
 Then I ran strings <code>./pid.4888.dmp | grep KCTF -C 5</code> and the outcome looked as follows:
 
