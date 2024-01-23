@@ -6,15 +6,26 @@ permalink: /influxdb-injection-nosql-injection-knightctf-2024
 date: 2024-01-23
 ---
 
+<style>
+    /* images are fairly large in this writeup specifically, but they aren't everywhere, so this change should be applied here only */
+    img {
+        width: 50%;
+        height: 50%;
+    }
+</style>
+
 This is the challenge:
+<br/>
 ![challenge name and description](/assets/img/challenge fluxx.png)
 
 Based on the X-Powered-By header being Express on all pages and receiving a <code>Cannot GET /(requested url)</code> on non-existent URLs (e.g. <a href="http://66.228.53.87:9001/a" rel="noopener">66.228.53.87:9001/a</a>), I can infer this is a <a href="https://expressjs.com/" rel="noopener">Express.js</a> server.
+<br/>
 <img src="https://cdn.discordapp.com/attachments/1194841726163095565/1198507422340358154/image.png?ex=65bf2804&is=65acb304&hm=e6100f755e6fed1f1811b7c852c048c3745f18e73d8a522bebe57997bd84b337&"/>
 
 One of our team member finds https://book.hacktricks.xyz/pentesting-web/nosql-injection then checks finds that visiting <code>http://66.228.53.87:9001/query?data='%20||%201==1//%20%20%20%20or%20%20%20%20'%20||%201==1%00%20%20%20%20%20or%20%20%20%20admin'%20||%20'a'=='a</code> creates an erorr
 
 I search this error online and learn that it's an error related to <a href="https://github.com/influxdata/influxdb" rel="noopener">InfluxDB</a>, which I haven't heard of until this challenge.
+<br/>
 <img src="https://cdn.discordapp.com/attachments/1194841726163095565/1198512198323011714/image.png?ex=65bf2c77&is=65acb777&hm=e54a3bc3373d4d041b72b951d42801b3487e256700888636c283a9552efe1ca5&"/>
 
 This also matches up with the challenge name and description:
@@ -22,12 +33,7 @@ This also matches up with the challenge name and description:
 
 Searching about SQL injection in InfluxDB, I find <a href="https://rafa.hashnode.dev/influxdb-nosql-injection" rel="noopener">https://rafa.hashnode.dev/influxdb-nosql-injection</a>.
 
-After facing some errors, I go back to the article I was copying this code off of and decide to fix my code.
-<img src="https://cdn.discordapp.com/attachments/1194841726163095565/1198513709031637003/image.png?ex=65bf2ddf&is=65acb8df&hm=eeb3617382a263ce1ce589dc27892b740e910247df434365bad677b61a3fab9d&"/>
-<img src="https://cdn.discordapp.com/attachments/1194841726163095565/1198513949394616340/image.png?ex=65bf2e18&is=65acb918&hm=62e920b35f5221c448fcc7f8d1c98179636f2c4c33ce432cf061540f41d80660&"/>
-
-Fixed code:
-<img src="https://cdn.discordapp.com/attachments/1194841726163095565/1198514115224801290/image.png?ex=65bf2e40&is=65acb940&hm=5d58a580b01c184c15b0261c29c794e69816ad572a42be4d6d6d7535f1ddf1ab&"/>
+After facing some errors, I go back to the article I was copying this code off of and fix my code.
 
 But this is very inefficient to do manually. I find a script on <a href="https://book.hacktricks.xyz/pentesting-web/nosql-injection#blind-nosql">book.hacktricks.xyz/pentesting-web/nosql-injection#blind-nosql</a> that can automate this. It requires a bit of changes, but here's the working script, based on the Hacktricks resource:
 
