@@ -10,7 +10,7 @@ The challenge involves finding the history of commands run in the Windows comman
 
 I start by using <a href="https://github.com/volatilityfoundation/volatility" rel="nooopener">Volatility</a>'s <code>windows.cmdline.CmdLine</code> to analyze the memory dump file's currently running programs and their arguments:
 
-<pre>
+```
 c@computer:~/Documents/volatility3$ python3 vol.py -f ~/Documents/KnightSquad-001.DMP windows.cmdline.CmdLine
 Volatility 3 Framework 2.5.2
 Progress:  100.00		PDB scanning finished                                
@@ -79,7 +79,7 @@ PID	Process	Args
 4680	dllhost.exe	C:\Windows\system32\DllHost.exe /Processid:{E10F6C3A-F1AE-4ADC-AA9D-2FE65525666E}
 4352	dllhost.exe	C:\Windows\system32\DllHost.exe /Processid:{E10F6C3A-F1AE-4ADC-AA9D-2FE65525666E}
 3044	notmyfault64.e	"C:\Users\siam\Desktop\NotMyFault\notmyfault64.exe"  /crash
-</pre>
+```
 
 I then dumped the memory of the <a href="https://www.lifewire.com/conhost-exe-4158039" rel="noopener">conhost process</a> (pid 4888) by running <code>python3 vol.py -f ~/Documents/KnightSquad-001.DMP -o ~/Downloads windows.memmap.Memmap --pid 4888 --dump</code>
 
