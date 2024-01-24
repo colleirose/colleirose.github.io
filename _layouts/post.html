@@ -21,7 +21,7 @@ layout: default
   // Lazy load images not visible in the viewport
   
   (() => {
-    document.getElementById("content").innerHTML = `{{ content | replace: "`", "\`" | replace: "${", "\$\{" }}`;
+    document.getElementById("content").innerHTML = String.raw`{{ content | replace: "`", "\`"}}`.replaceAll("\\`", "`");
 
     const options = {
         root: null,
