@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Fiding Windows command line history in Volatility - CTF Writeup - Knight CTF 2024"
+title: "Finding Windows command line history in Volatility - CTF Writeup - Knight CTF 2024"
 description: "Using the Volatility forensics software to obtain Windows command line history"
 author: "Colleirose"
 permalink: /execution-challenge-forensics-knight-ctf-cmd-history-in-volatility
@@ -87,6 +87,6 @@ I then dumped the memory of the <a href="https://www.lifewire.com/conhost-exe-41
 
 Then I ran <code>strings ./pid.4888.dmp | grep KCTF -C 5</code> and the outcome looked as follows:
 
-![Command line output showing some fake flags and the real flag KCTF{W3_AR3_tH3_Kn1GHt}](/assets/img/execution%20forensics%20challenge%20output.png)
+<img src="/assets/img/execution%20forensics%20challenge%20output.png" width="549" height="509" alt="Command line output showing some fake flags and the real flag KCTF{W3_AR3_tH3_Kn1GHt}">
 
 The flag is <code>KCTF{W3_AR3_tH3_Kn1GHt}</code>

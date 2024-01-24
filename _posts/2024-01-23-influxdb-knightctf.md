@@ -9,22 +9,22 @@ last_modified_at: 2024-01-23
 ---
 
 This is the challenge:
-<br/>
-![Challenge named "Fluxx" with description "Recently I have made a simple app for monitoring and analyzing metrics, events, and real-time data. I used a database which is designed for handling high volumes of timestamped data. But I think its vulnerable find it and get the flag"](/assets/img/challenge fluxx.webp)
+<br/><br/>
+<img src="/assets/img/challenge fluxx.webp" alt="Challenge named &quot;Fluxx&quot; with description &quot;Recently I have made a simple app for monitoring and analyzing metrics, events, and real-time data. I used a database which is designed for handling high volumes of timestamped data. But I think its vulnerable find it and get the flag&quot;" width="466.5px" height="343.5px">
 
 Based on the X-Powered-By header being Express on all pages and receiving a <code>Cannot GET /(requested url)</code> on non-existent URLs (e.g. <a href="http://66.228.53.87:9001/a" rel="noopener">66.228.53.87:9001/a</a>), I can infer this is a <a href="https://expressjs.com/" rel="noopener">Express.js</a> server.
-<br/>
-<img src="https://cdn.discordapp.com/attachments/1194841726163095565/1198507422340358154/image.png" alt="Response headers showing X-Powered-By: Express"/>
+<br/><br/>
+<img src="https://cdn.discordapp.com/attachments/1194841726163095565/1198507422340358154/image.png" width="518px" height="205px" alt="Response headers showing X-Powered-By: Express"/>
 
 One of our team member finds <a href="https://book.hacktricks.xyz/pentesting-web/nosql-injection">book.hacktricks.xyz/pentesting-web/nosql-injection</a>, and using that cheatsheeet (which I recommend using because it is very useful), finds that visiting <code>http://66.228.53.87:9001/query?data='%20||%201==1//%20%20%20%20or%20%20%20%20'%20||%201==1%00%20%20%20%20%20or%20%20%20%20admin'%20||%20'a'=='a</code> creates an error saying <code>Expected RPAREN, got EOF</code>
 
 I search this error online and learn that it's an error related to <a href="https://github.com/influxdata/influxdb" rel="noopener">InfluxDB</a>, which I haven't heard of until this challenge.
 <br/>
-<img src="/assets/img/expected rparen got eof error.webp" alt="DuckDuckGo search results for the error"/>
+<img src="/assets/img/expected rparen got eof error.webp" width="373px" height="407.5px" alt="DuckDuckGo search results for the error"/>
 
 This also matches up with the challenge name and description:
-<br/>
-![Challenge named "Fluxx" with description "Recently I have made a simple app for monitoring and analyzing metrics, events, and real-time data. I used a database which is designed for handling high volumes of timestamped data. But I think its vulnerable find it and get the flag"](/assets/img/challenge fluxx.webp)
+<br/><br/>
+<img src="/assets/img/challenge fluxx.webp" alt="Challenge named &quot;Fluxx&quot; with description &quot;Recently I have made a simple app for monitoring and analyzing metrics, events, and real-time data. I used a database which is designed for handling high volumes of timestamped data. But I think its vulnerable find it and get the flag&quot;" width="466.5px" height="343.5px">
 
 Searching about SQL injection in InfluxDB, I find <a href="https://rafa.hashnode.dev/influxdb-nosql-injection" rel="noopener">rafa.hashnode.dev/influxdb-nosql-injection</a>.
 
@@ -50,15 +50,15 @@ for i in range(21):
 
 The script then crashes with some error about the connection being aborted but tells me the correct string starts with K
 
-<img src="/assets/img/influxdb knightctf challenge console output.webp" alt="Console output"/>
+<img src="/assets/img/influxdb knightctf challenge console output.webp" width="1130" height="508" alt="Console output"/>
 
 So I went back to Burp Suite and tried it again with the K
 
-<img src="/assets/img/burp suite influxdb knightctf.webp" alt="Burp Suite output showing the flag as KCTF{gOUPqVWa0eUT2wF2ipzX3v5pxikvqYhxR9oL}"/>
+<img src="/assets/img/burp suite influxdb knightctf.webp" width="989" height="509" alt="Burp Suite output showing the flag as KCTF{gOUPqVWa0eUT2wF2ipzX3v5pxikvqYhxR9oL}"/>
 
 The flag is <code>KCTF{gOUPqVWa0eUT2wF2ipzX3v5pxikvqYhxR9oL}</code> according to the output of this web request. This flag is correct when submitted:
 
-<img src="/assets/img/fluxx challenge correct.webp" alt='Challenge showing "Correct" message after submitting flag'/>
+<img src="/assets/img/fluxx challenge correct.webp" width="331" height="509" alt='Challenge showing "Correct" message after submitting flag'/>
 
 This is the SQL injection payload with the URI parameters decoded. I don't fully understand what it does because I've never used NoSQL or InfluxDB before.
 
