@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Baby JS Blacklist JavaScript Jail Challenge Writeup | University of Toronto CTF"
+title: "Reading files in NodeJS without the fs module | Baby JS Blacklist CTF writeup | University of Toronto CTF"
 author: "Colleirose"
 permalink: /uoft-ctf-baby-js-blacklist-writeup
 date: 2024-01-15
@@ -8,29 +8,31 @@ date: 2024-01-15
 
 We're given this challenge:
 
-![image](/assets/img/baby%20js%20writeup_html_97da4d113759bfed.webp)
+![Challenge description: "I hate functions. I hate them so much, that I made it so you can never call them!"](/assets/img/baby%20js%20writeup_html_97da4d113759bfed.webp)
 
-Downloading <code>chal.js</code>, my first thought is that I could possibly overwrite the modules that check if something is a function call:
+Downloading <code>chal.js</code>, my first thought is that I could possibly overwrite these modules:
+<pre><code class="language-javascript">
+import * as parser from "@babel/parser"
+import _traverse from "@babel/traverse"
+import _generate from "@babel/generator"
+const traverse = _traverse.default;
+const generate = _generate.default;
+import readline from "readline":
+</code></pre>
 
-![image](/assets/img/baby%20js%20writeup_html_a507a86c6d10dcbc.webp)
-
-![image](/assets/img/baby%20js%20writeup_html_1e72427725866094.webp)
-
-![image](/assets/img/baby%20js%20writeup_html_bb39b67e1e55766.webp)
-
-However, I didn't succeed in doing this. Although I overwrote every function on non-constant modules to <code>function(){ return true }</code> or <code>function() { return false }</code>, nothing changed and I still couldn't call any functions.
+However, I didn't succeed in doing this. Although I overwrote every function on non-constant modules to <code>function() { return true }</code> or <code>function() { return false }</code>, nothing changed and I still couldn't call any functions.
 
 I then looked up how to call a function without parentheses and found <a href="https://portswigger.net/research/the-seventh-way-to-call-a-javascript-function-without-parentheses" rel="noopener">https://portswigger.net/research/the-seventh-way-to-call-a-javascript-function-without-parentheses</a>. I tried running <code>fetch`example.com`</code>, which did indeed invoke the fetch function, but triggered this error (in retrospect, this is probably because the Docker instance doesn't have Internet access, but I just assumed the approach was flawed at the time):
 
-![image](/assets/img/baby%20js%20writeup_html_b0a6f054afc88a9f.webp)
+![Error: Fetch failed: Cause: getaddrinfo EAI_AGAIN example.com](/assets/img/baby%20js%20writeup_html_b0a6f054afc88a9f.webp)
 
 Ok, back to the drawing board…
 
-<img src="/assets/img/baby%20js%20writeup_html_528c9aa660c40b7b.webp"/>
+<img alt="Aether from Genshin Impact in a thinking pose" src="/assets/img/baby%20js%20writeup_html_528c9aa660c40b7b.webp"/>
 
 I went back and reviewed the code, then an idea stuck out to me: I could simply overwrite the checkSafe function.
 
-<img src="/assets/img/baby%20js%20writeup_html_45282170fe481152.webp"/>
+<img alt="checkSafe(ast) { return this.noCallExpressions(ast) }" src="/assets/img/baby%20js%20writeup_html_45282170fe481152.webp"/>
 
 I ran the following code:
 <pre><code class="language-javascript">
@@ -38,9 +40,9 @@ this.checkSafe = () => { return true }
 console.log(1337);
 </code></pre>
 
-<img src="/assets/img/baby%20js%20writeup_html_a364fc3ae318c0db.webp" />
+<img aria-display="none" src="/assets/img/baby%20js%20writeup_html_a364fc3ae318c0db.webp" />
 
-Working! Now to get that flag… Hmm… Wait, where <i>is</i> that flag?
+It worked! Now to get that flag… Hmm… Wait, where <i>is</i> that flag?
 
 I went back to the <code>chal.js</code> and didn't see any flag declaration. Oops, I must've missed something. I checked the <code>Dockerfile</code>, and, ah, sure enough, there it is:
 

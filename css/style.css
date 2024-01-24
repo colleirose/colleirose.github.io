@@ -29,7 +29,7 @@ img {
 }
 
 a {
-  color: #79c0ff;
+  color: #003462;
   text-decoration: none;
 }
 
@@ -80,5 +80,5 @@ footer {
 }
 
 .post-excerpt {
-  color: #f22c3d;
+  color: white;
 }

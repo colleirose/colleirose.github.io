@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Execution Challenge CTF Writeup | Knight CTF 2024"
+title: "Fiding Windows command line history in Volatility | CTF Writeup | Knight CTF 2024"
 author: "Colleirose"
 permalink: /execution-challenge-forensics-knight-ctf-cmd-history-in-volatility
 date: 2024-01-23
@@ -83,8 +83,8 @@ PID	Process	Args
 
 I then dumped the memory of the <a href="https://www.lifewire.com/conhost-exe-4158039" rel="noopener">conhost process</a> (pid 4888) by running <code>python3 vol.py -f ~/Documents/KnightSquad-001.DMP -o ~/Downloads windows.memmap.Memmap --pid 4888 --dump</code>
 
-Then I ran strings <code>./pid.4888.dmp | grep KCTF -C 5</code> and the outcome looked as follows:
+Then I ran <code>strings ./pid.4888.dmp | grep KCTF -C 5</code> and the outcome looked as follows:
 
-![KCTF{W3_AR3_tH3_Kn1GHt}](/assets/img/execution%20forensics%20challenge%20output.png)
+![Command line output showing some fake flags and the real flag KCTF{W3_AR3_tH3_Kn1GHt}](/assets/img/execution%20forensics%20challenge%20output.png)
 
 The flag is <code>KCTF{W3_AR3_tH3_Kn1GHt}</code>
