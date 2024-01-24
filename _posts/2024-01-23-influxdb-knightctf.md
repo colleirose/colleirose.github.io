@@ -5,6 +5,7 @@ description: "Performing blind SQL injection in NoSQL with InfluxDB in a CTF cha
 author: "Colleirose"
 permalink: /influxdb-injection-nosql-injection-knightctf-2024
 date: 2024-01-23
+last_modified_at: 2024-01-23
 ---
 
 This is the challenge:

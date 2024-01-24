@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<p>{{ page.date }} - Written by {{ page.author }}</p>
+<p>Published on {{ page.date }} | Last modified on {{ page.last_modified_at }} | Written by {{ page.author }}</p>
 
 {{ content }}
 
@@ -15,7 +15,6 @@ looks nice on posts but not on the main page
     margin: 1% 2%;
   }
 </style>
-
 
 <!--
   highlight code blocks

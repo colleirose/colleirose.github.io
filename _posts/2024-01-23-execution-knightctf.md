@@ -5,6 +5,7 @@ description: "Using the Volatility forensics software to obtain Windows command 
 author: "Colleirose"
 permalink: /execution-challenge-forensics-knight-ctf-cmd-history-in-volatility
 date: 2024-01-23
+last_modified_at: 2024-01-23
 ---
 
 The challenge involves finding the history of commands run in the Windows command line (<code>cmd.exe</code>) based on a memory dump file. The command history will contain the flag. 

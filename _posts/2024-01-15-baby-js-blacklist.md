@@ -6,6 +6,7 @@ permalink: /uoft-ctf-baby-js-blacklist-writeup
 description: Bypassing code that prevents calling function in a JavaScript jail CTF challenge
 image: /assets/img/baby%20js%20blacklist%20challenge%20info.webp
 date: 2024-01-15
+last_modified_at: 2024-01-23
 ---
 
 We're given this challenge:
