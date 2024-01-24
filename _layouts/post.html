@@ -18,7 +18,7 @@ layout: default
 
 <div id="content"></div>
 
-{% assign new_content = content | replace: '"', '\\"' | replace "\\n", "\\\n" %}
+{% assign new_content = content | replace: '"', '\\"' | replace '\n', '\\n' %}
 
 <script>
   // Lazy load images not visible in the viewport
