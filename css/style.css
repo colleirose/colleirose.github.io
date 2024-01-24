@@ -29,7 +29,7 @@ img {
 }
 
 a {
-  color: #1234ec;
+  color: #afbbff;
   text-decoration: none;
 }
 
@@ -48,6 +48,10 @@ nav > a {
 
 footer {
   margin-top: auto;
+}
+
+footer > a {
+  color: #1234ec;
 }
 
 /* Home page */
