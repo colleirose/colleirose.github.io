@@ -18,13 +18,13 @@ layout: default
 
 <div id="content"></div>
 
-{% assign new_content = content | replace: "`", "\`" %}
+{% assign new_content = content | replace: '"', '\\"' | replace "\\n", "\\\n" %}
 
 <script>
   // Lazy load images not visible in the viewport
   
   (() => {
-    document.getElementById("content").innerHTML = `{{ new_content }}`;
+    document.getElementById("content").innerHTML = "{{ new_content }}";
 
     const options = {
         root: null,
