@@ -1,6 +1,14 @@
 ---
 layout: default
 ---
+<style>
+  /* This looks nice on posts but not on the main page. */
+  main {
+    text-align: left;
+    margin: 1% 2%;
+  }
+</style>
+
 <meta rel="canocial" href="https://colleirose.github.io{{ page.permalink }}"/>
 <p style="text-align: center">Published on {{ page.date }} | Last modified on {{ page.last_modified_at }} | Written by {{ page.author }}</p>
 
@@ -29,14 +37,6 @@ layout: default
     });
   })();
 </script>
-
-<style>
-  /* This looks nice on posts but not on the main page. */
-  main {
-    text-align: left;
-    margin: 1% 2%;
-  }
-</style>
 
 <link
   rel="stylesheet"
