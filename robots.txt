@@ -1,5 +1,3 @@
-# This blocks user agents associated with people search engines, advertising, and other unwanted things
-
 # Piplbot, a people search engine
 User-agent: PiplBot
 Disallow: /
@@ -20,3 +18,14 @@ Disallow: /
 User-agent: GPTBot
 User-agent: Google-Extended
 Disallow: /
+
+# Although not officially supported by the robots.txt spec, some crawlers support pattern matching.
+# We don't want crawlers to be indexing pages with an HTML extension (we want them to be indexing the pages without the extension), so let's take advantage of that where possible.
+# This will only be a small issue given that we have a canocial tag for most pages, but it's best to play it safe
+User-agent: *
+Disallow: *.html
+Disallow: /*.html
+Disallow: index.html
+Disallow: /index.html
+Disallow: 404.html
+Disallow: /404.html
