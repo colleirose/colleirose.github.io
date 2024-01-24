@@ -40,13 +40,13 @@ code {
 
 /* Nav bar and footer */
 nav, footer {
-  background: #00a67d;
+  background: #0d1117;
   padding-top: 1%;
   padding-bottom: 1%;
 }
 
 nav > a {
-  background: black;
+  background: #1c6373;
   color: white;
   padding: 1%;
 }
@@ -55,12 +55,7 @@ footer {
   margin-top: auto;
 }
 
-footer > p > a {
-  color: #2c1d55;
-}
-
 /* Home page */
-
 #blogPostList {
   max-width: 800px;
   margin: 0 auto;
