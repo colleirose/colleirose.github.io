@@ -33,6 +33,11 @@ a {
   text-decoration: none;
 }
 
+code {
+  background: #0d1117;
+  padding: 0.1% 0.2%;
+}
+
 /* Nav bar and footer */
 nav, footer {
   background: #00a67d;
