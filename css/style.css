@@ -50,7 +50,7 @@ footer {
   margin-top: auto;
 }
 
-footer > a {
+footer > p > a {
   color: #2c1d55;
 }
 
