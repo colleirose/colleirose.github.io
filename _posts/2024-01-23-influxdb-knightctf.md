@@ -14,11 +14,11 @@ Based on the X-Powered-By header being Express on all pages and receiving a <cod
 <br/>
 <img src="https://cdn.discordapp.com/attachments/1194841726163095565/1198507422340358154/image.png" alt="Response headers showing X-Powered-By: Express"/>
 
-One of our team member finds <a href="https://book.hacktricks.xyz/pentesting-web/nosql-injection">book.hacktricks.xyz/pentesting-web/nosql-injection</a>, and using that cheatsheeet (which I recommend using because it is very useful), finds that visiting <code>http://66.228.53.87:9001/query?data='%20||%201==1//%20%20%20%20or%20%20%20%20'%20||%201==1%00%20%20%20%20%20or%20%20%20%20admin'%20||%20'a'=='a</code> creates an erorr
+One of our team member finds <a href="https://book.hacktricks.xyz/pentesting-web/nosql-injection">book.hacktricks.xyz/pentesting-web/nosql-injection</a>, and using that cheatsheeet (which I recommend using because it is very useful), finds that visiting <code>http://66.228.53.87:9001/query?data='%20||%201==1//%20%20%20%20or%20%20%20%20'%20||%201==1%00%20%20%20%20%20or%20%20%20%20admin'%20||%20'a'=='a</code> creates an error saying <code>Expected RPAREN, got EOF</code>
 
 I search this error online and learn that it's an error related to <a href="https://github.com/influxdata/influxdb" rel="noopener">InfluxDB</a>, which I haven't heard of until this challenge.
 <br/>
-<img src="https://cdn.discordapp.com/attachments/1194841726163095565/1198512198323011714/image.png" alt="DuckDuckGo search results for the error"/>
+<img src="/assets/img/expected rparen got eof error.webp" alt="DuckDuckGo search results for the error"/>
 
 This also matches up with the challenge name and description:
 <br/>
