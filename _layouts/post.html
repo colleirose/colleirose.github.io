@@ -20,7 +20,7 @@ layout: default
 {% endcapture %}
 <div id="content"></div>
 
-{% assign new_content = content | replace: '"', '\\"' | replace newline, '\n' %}
+{% assign new_content = content | replace: '"', '\\"' | newline_to_br | replace: '<br/>', '\n' %}
 
 <script>
   // Lazy load images not visible in the viewport
