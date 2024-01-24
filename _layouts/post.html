@@ -8,8 +8,6 @@ layout: default
 
 <script>
   // Lazy load images not visible in the viewport
-  hljs.highlightAll();
-  
   (() => {
     const options = {
         root: null,
@@ -52,3 +50,5 @@ looks nice on posts but not on the main page
 />
 
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>hljs.highlightAll()</script>
