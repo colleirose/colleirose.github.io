@@ -15,10 +15,12 @@ layout: default
 <noscript>
 {{ content }}
 </noscript>
+{% capture newline %}
 
+{% endcapture %}
 <div id="content"></div>
 
-{% assign new_content = content | replace: '"', '\\"' | replace '\n', '\\n' %}
+{% assign new_content = content | replace: '"', '\\"' | replace newline, '\n' %}
 
 <script>
   // Lazy load images not visible in the viewport
