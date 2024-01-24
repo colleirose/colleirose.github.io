@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Fiding Windows command line history in Volatility | CTF Writeup | Knight CTF 2024"
+description: "Using the Volatility forensics software to obtain Windows command line history"
 author: "Colleirose"
 permalink: /execution-challenge-forensics-knight-ctf-cmd-history-in-volatility
 date: 2024-01-23

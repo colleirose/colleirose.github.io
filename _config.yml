@@ -3,3 +3,9 @@ defaults:
       path: "assets/img"
     values:
       image: true
+
+plugins:
+  - jekyll-seo-tag
+
+title: Colleirose Blog
+tagline: CTF writeups and other interesting things

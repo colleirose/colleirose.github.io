@@ -3,12 +3,14 @@ layout: post
 title: "Reading files in NodeJS without the fs module | Baby JS Blacklist CTF writeup | University of Toronto CTF"
 author: "Colleirose"
 permalink: /uoft-ctf-baby-js-blacklist-writeup
+description: Bypassing code that prevents calling function in a JavaScript jail CTF challenge
+image: /assets/img/baby%20js%20blacklist%20challenge%20info.webp
 date: 2024-01-15
 ---
 
 We're given this challenge:
 
-![Challenge description: "I hate functions. I hate them so much, that I made it so you can never call them!"](/assets/img/baby%20js%20writeup_html_97da4d113759bfed.webp)
+![Challenge description: "I hate functions. I hate them so much, that I made it so you can never call them!"](/assets/img/baby%20js%20blacklist%20challenge%20info.webp)
 
 Downloading <code>chal.js</code>, my first thought is that I could possibly overwrite these modules:
 <pre><code class="language-javascript">
