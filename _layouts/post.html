@@ -20,7 +20,11 @@ layout: default
 {% endcapture %}
 <div id="content"></div>
 
-{% assign new_content = content | replace: '"', '\\"' | newline_to_br | replace: '<br/>', '\n' %}
+<!--
+escape anything that could cause issues wtih the JS and use a newline_to_br hack to get all the newlines converted to \n,
+and also replace any existing <br /> tags with <br/> so that we don't replace existing br tags with \n
+-->
+{% assign new_content = content | replace: '"', '\\"' | replace '<br />', '<br/>' | newline_to_br | replace: '<br />', '\n' %}
 
 <script>
   // Lazy load images not visible in the viewport
