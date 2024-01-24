@@ -11,7 +11,7 @@ title: "Home"
     {% for post in site.posts %}
     <div class="postListing">
         <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-        <p class="post-excerpt">{{ post.content | truncate: 15 }}</p>
+        {{ post.content | truncate: 15 }}
     </div>
     {% endfor %}
 </section>

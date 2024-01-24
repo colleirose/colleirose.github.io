@@ -61,7 +61,7 @@ footer {
   border: 3px solid #00a67d;
   border-radius: 5px;
   background: rgb(25, 25, 25);
-  color: #df3079;
+  color: white;
   margin-bottom: 20px;
   padding: 15px;
 }
@@ -77,8 +77,4 @@ footer {
 
 .post-title > a:hover {
   color: #46f0c5;
-}
-
-.post-excerpt {
-  color: white;
 }
