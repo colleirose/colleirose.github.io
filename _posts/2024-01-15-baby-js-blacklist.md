@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reading files in NodeJS without the fs module | Baby JS Blacklist CTF writeup | University of Toronto CTF"
+title: "Reading files in NodeJS without the fs module - Baby JS Blacklist CTF writeup - University of Toronto CTF"
 author: "Colleirose"
 permalink: /uoft-ctf-baby-js-blacklist-writeup
 description: Bypassing code that prevents calling function in a JavaScript jail CTF challenge

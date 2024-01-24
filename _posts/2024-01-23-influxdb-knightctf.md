@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "InfluxDB NoSQL blind SQL injection | Fluxx web CTF challenge writeup | Knight CTF 2024"
+title: "InfluxDB with NoSQL blind SQL injection - Fluxx web CTF challenge writeup - Knight CTF 2024"
 description: "Performing blind SQL injection in NoSQL with InfluxDB in a CTF challenge"
 author: "Colleirose"
 permalink: /influxdb-injection-nosql-injection-knightctf-2024
