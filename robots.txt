@@ -15,7 +15,7 @@ User-agent: AdsBot-Google
 User-agent: Mediapartners-Google
 Disallow: /
 
-# No proprietary models that refuse to comply with licenses
+# Block proprietary models that will not comply with GPL
 # See https://www.eff.org/deeplinks/2023/12/no-robotstxt-how-ask-chatgpt-and-google-bard-not-use-your-website-training
 User-agent: GPTBot
 User-agent: Google-Extended
