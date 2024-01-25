@@ -8,50 +8,10 @@ layout: default
     margin: 1% 2%;
   }
 </style>
+
 <p style="text-align: center">Published on {{ page.date }} | Last modified on {{ page.last_modified_at }} | Written by {{ page.author }}</p>
 
-<noscript>
 {{ content }}
-</noscript>
-<div id="content"></div>
-
-<script>
-  // Lazy load images not visible in the viewport
-  
-  (() => {
-    document.getElementById("content").innerHTML = String.raw`{{ content | replace: "`", "000000000000BACKTICKCHARACTER000000000000"}}`.replaceAll("000000000000BACKTICKCHARACTER000000000000", "`");
-
-    const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.0
-    };
-
-    const isNotVisible = (element) => {
-        const rect = element.getBoundingClientRect();
-
-        return (
-            rect.bottom < 0 ||
-            rect.right < 0 ||
-            rect.left > window.innerWidth ||
-            rect.top > window.innerHeight
-        );
-    }
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting || isNotVisible(entry.target)) {
-                entry.target.setAttribute('loading', 'lazy');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, options);
-
-    document.querySelectorAll('img').forEach((img) => {
-        observer.observe(img);
-    });
-})();
-</script>
 
 <link
   rel="stylesheet"
