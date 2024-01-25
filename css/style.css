@@ -1,3 +1,4 @@
+/* Basic styling */
 html,
 body {
   text-align: center;
@@ -22,6 +23,7 @@ main {
   flex: 1;
 }
 
+/* Specific elements */
 img {
   border: 0;
   max-width: 100%;
@@ -54,32 +56,4 @@ nav > a {
 footer {
   margin-top: auto;
   color: white;
-}
-
-/* Home page */
-#blogPostList {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.postListing {
-  border: 3px solid #00a67d;
-  border-radius: 5px;
-  background: rgb(25, 25, 25);
-  color: white;
-  margin-bottom: 20px;
-  padding: 15px;
-}
-
-.post-title, .post-title > a {
-  margin: 0;
-}
-
-.post-title > a {
-  text-decoration: none;
-  color: #00a67d;
-}
-
-.post-title > a:hover {
-  color: #46f0c5;
 }

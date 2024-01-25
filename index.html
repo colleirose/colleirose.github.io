@@ -6,14 +6,44 @@ title: "Home"
 <p>CTF writeups and things of interest will be posted here</p>
 <p>CTFTime account: <a href="https://ctftime.org/user/182918" rel="noopener">colleirose</a></p>
 
+<style>
+  #blogPostList {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .postListing {
+    border: 3px solid #00a67d;
+    border-radius: 5px;
+    background: rgb(25, 25, 25);
+    color: white;
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+
+  .post-title,
+  .post-title > a {
+    margin: 0;
+  }
+
+  .post-title > a {
+    text-decoration: none;
+    color: #00a67d;
+  }
+
+  .post-title > a:hover {
+    color: #46f0c5;
+  }
+</style>
+
 <section id="blogPostList">
-    <h2>Posts</h2>
-    {% for post in site.posts %}
-    <div class="postListing">
-        <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-        {{ post.content | truncate: 15 }}</p> <!-- the opening p tag is transcluded from the post content -->
-    </div>
-    {% endfor %}
+  <h2>Posts</h2>
+  {% for post in site.posts %}
+  <div class="postListing">
+    <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    {{ post.content | truncate: 15 }}</p> <!-- the opening p tag is transcluded from the post content -->
+  </div>
+  {% endfor %}
 </section>
 
 <!-- chen fetch ./token.txt is a 1337 hack that pwned CATS -->
