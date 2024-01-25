@@ -33,18 +33,34 @@ code {
 }
 
 .highlight .ow, .highlight .o {
-  color: #f00;
+  color: #00ff70;
   font-weight: bold;
 }
 
 .highlight .k, .highlight .kv {
-  color: #0800ff;
+  color: #adaaff;
   font-weight: bold;
 }
 
 .highlight .kn {
   color: #ac8a8a;
   font-weight: bold;
+}
+
+.highlight .s {
+  color: #ff6b90;
+}
+
+.highlight .nn {
+  color: #ff7b7b;
+}
+
+.highlight .nb {
+  color: #00BFFF;
+}
+
+.highlight .mi {
+  color: #9ff;
 }
 
 /** Nav bar and footer **/
