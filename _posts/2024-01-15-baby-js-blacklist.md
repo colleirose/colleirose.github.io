@@ -14,14 +14,14 @@ We're given this challenge:
 ![Challenge description: "I hate functions. I hate them so much, that I made it so you can never call them!"](/assets/img/baby%20js%20blacklist%20challenge%20info.webp)
 
 Downloading <code>chal.js</code>, my first thought is that I could possibly overwrite these modules:
-<pre><code class="language-javascript">
+```js
 import * as parser from "@babel/parser"
 import _traverse from "@babel/traverse"
 import _generate from "@babel/generator"
 const traverse = _traverse.default;
 const generate = _generate.default;
 import readline from "readline":
-</code></pre>
+```
 
 However, I didn't succeed in doing this. Although I overwrote every function on non-constant modules to <code>function() { return true }</code> or <code>function() { return false }</code>, nothing changed and I still couldn't call any functions.
 
