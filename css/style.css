@@ -70,6 +70,10 @@ code {
     color: #9ff;
 }
 
+.highlight .s2 {
+    color: #ff9fb7;
+}
+
 /** Nav bar and footer **/
 nav,
 footer {
