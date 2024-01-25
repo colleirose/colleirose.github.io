@@ -7,7 +7,7 @@ img {
   max-height: 100%;
 }
 
-a {
+a:not(.post-title > a):not(nav > a) {
   color: #f474ff;
   text-decoration: none;
 }
