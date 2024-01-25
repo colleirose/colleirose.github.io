@@ -87,6 +87,6 @@ I then dumped the memory of the <a href="https://www.lifewire.com/conhost-exe-41
 
 Then I ran <code>strings ./pid.4888.dmp | grep KCTF -C 5</code> and the outcome looked as follows:
 
-<img src="/assets/img/execution-forensics-challenge-output.webp" width="549" height="509" alt="Command line output showing some fake flags and the real flag KCTF{W3_AR3_tH3_Kn1GHt}">
+<img src="/assets/img/execution-forensics-challenge-output.webp" loading="lazy" alt="Command line output showing some fake flags and the real flag KCTF{W3_AR3_tH3_Kn1GHt}">
 
 The flag is <code>KCTF{W3_AR3_tH3_Kn1GHt}</code>
