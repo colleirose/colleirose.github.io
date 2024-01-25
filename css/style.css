@@ -17,6 +17,31 @@ code {
   padding: 0.1% 0.2%;
 }
 
+.highlight > code {
+  background: unset;
+  padding: unset;
+}
+
+.highlight {
+  background-color: #392353;
+  padding: 0.25%;
+}
+
+.highlight .ow, .highlight .o {
+  color: #f00;
+  font-weight: bold;
+}
+
+.highlight .k, .highlight .kv {
+  color: #0800ff;
+  font-weight: bold;
+}
+
+.highlight .kn {
+  color: #ac8a8a;
+  font-weight: bold;
+}
+
 /** Nav bar and footer **/
 nav, footer {
   background: #0d1117;
