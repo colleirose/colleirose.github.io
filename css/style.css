@@ -1,29 +1,6 @@
-/* Basic styling */
-html,
-body {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  background: rgb(40, 40, 40);
-  color: white;
-}
+/* Basic styling is in the head tag in default.html */
 
-html {
-  height: 100%;
-}
-
-body {
-  min-height: 100%;
-  margin: 0;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
-}
-
-/* Specific elements */
+/** Specific elements **/
 img {
   border: 0;
   max-width: 100%;
@@ -40,7 +17,7 @@ code {
   padding: 0.1% 0.2%;
 }
 
-/* Nav bar and footer */
+/** Nav bar and footer **/
 nav, footer {
   background: #0d1117;
   padding-top: 1%;
