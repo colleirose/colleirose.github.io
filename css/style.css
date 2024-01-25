@@ -1,5 +1,29 @@
 /* Basic styling and common elements are in the head tag in default.html */
-/** Fix contrast issues with highlighted code blocks **/
+
+/*** Code blocks ***/
+code {
+    background: #0d1117;
+    padding: 0.1% 0.2%;
+}
+
+.highlight > code {
+    background: unset;
+    padding: unset;
+}
+
+.highlight {
+    background-color: #392353;
+    color: white;
+    padding: 0.5%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-bottom: 0.5%;
+    padding-bottom: 0.25%;
+}
+
+/** Fix contrast issues **/
+
 .highlight .ow,
 .highlight .o {
     color: #00ff70;
@@ -40,23 +64,4 @@
 
 .highlight .s2 {
     color: #ff9fb7;
-}
-
-/** Nav bar and footer **/
-nav,
-footer {
-    background: #0d1117;
-    padding-top: 1%;
-    padding-bottom: 1%;
-}
-
-nav>a {
-    background: #1c6373;
-    color: white;
-    padding: 1%;
-}
-
-footer {
-    margin-top: auto;
-    color: white;
 }

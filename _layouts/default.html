@@ -9,41 +9,15 @@ layout: compress
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
     <meta name="robots" content="noarchive" />
     <title>{{ page.title }} | Colleirose Blog</title>
-    <link rel="stylesheet" defer href="/assets/css/style.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" defer href="/css/style.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <noscript>
-      <style>
-        pre {
-          background: #0d1117;
-        }
-      </style>
-    </noscript>
-    <style>  
-      nav,
-      footer {
-          background: #0d1117;
-          padding-top: 1%;
-          padding-bottom: 1%;
-      }
-      
-      nav>a {
-          background: #1c6373;
-          color: white;
-          padding: 1%;
-      }
-      
-      footer {
-          margin-top: auto;
-          color: white;
-      }
-      
+    <link rel="stylesheet" defer href="/assets/css/style.css" crossorigin="anonymous" referrerpolicy="no-referrer"> <!-- this needs to be loaded before other CSS so that other CSS can override parts of it -->
+    <style>    
       html,
       body {
           text-align: center;
           font-family: Arial, Helvetica, sans-serif;
-          background: rgb(40, 40, 40);
+          background: #282828;
           color: white;
-          line-height: unset !important;
+          line-height: unset;
           font-size: 18px;
       }
 
@@ -59,8 +33,17 @@ layout: compress
           flex-direction: column;
       }
 
-      main {
-          flex: 1;
+      nav,
+      footer {
+          background: #0d1117;
+          padding-top: 1%;
+          padding-bottom: 1%;
+      }
+      
+      nav>a {
+          background: #1c6373;
+          color: white;
+          padding: 1%;
       }
 
       img {
@@ -73,28 +56,8 @@ layout: compress
           color: #f474ff;
           text-decoration: none;
       }
-
-      code {
-          background: #0d1117;
-          padding: 0.1% 0.2%;
-      }
-
-      .highlight > code {
-          background: unset;
-          padding: unset;
-      }
-
-      .highlight {
-          background-color: #392353;
-          color: white;
-          padding: 0.5%;
-          word-wrap: break-word;
-          white-space: pre-wrap;
-          word-break: break-word;
-          margin-bottom: 0.5%;
-          padding-bottom: 0.25%;
-      }
     </style>
+    <link rel="stylesheet" defer href="/css/style.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     {% seo title=false %}
   </head>
   <body lang="en-US">
@@ -108,12 +71,12 @@ layout: compress
       <a href="/">Home</a>
     </nav>
     
-    <main>
+    <main style="flex: 1">
       <h1 style="text-align: center">{{ page.title }}</h1>
       {{ content }}
     </main>
     
-    <footer>
+    <footer style="margin-top: auto; color: white;">
       <p>&copy; Colleirose, licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" rel="noopenner">GNU General Public License V3</a>.</p>
     </footer>
   </body>
