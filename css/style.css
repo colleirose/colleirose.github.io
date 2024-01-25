@@ -44,6 +44,11 @@ code {
     font-weight: bold;
 }
 
+.highlight .kd {
+    color: #50ff00;
+    font-weight: bold;
+}
+
 .highlight .kn {
     color: #90ffb6;
     font-weight: bold;
