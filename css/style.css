@@ -2,81 +2,84 @@
 
 /** Specific elements **/
 img {
-  border: 0;
-  max-width: 100%;
-  max-height: 100%;
+    border: 0;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 a:not(.post-title > a):not(nav > a) {
-  color: #f474ff;
-  text-decoration: none;
+    color: #f474ff;
+    text-decoration: none;
 }
 
 code {
-  background: #0d1117;
-  padding: 0.1% 0.2%;
+    background: #0d1117;
+    padding: 0.1% 0.2%;
 }
 
-.highlight > code {
-  background: unset;
-  padding: unset;
+.highlight>code {
+    background: unset;
+    padding: unset;
 }
 
 .highlight {
-	background-color: #392353;
-	padding: 0.5%;
-	word-wrap: break-word;
-	white-space: pre-wrap;
-	word-break: break-word;
-	margin-bottom: 0.5%;
-	padding-bottom: 0.25%;
+    background-color: #392353;
+    padding: 0.5%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-bottom: 0.5%;
+    padding-bottom: 0.25%;
 }
 
-.highlight .ow, .highlight .o {
-  color: #00ff70;
-  font-weight: bold;
+.highlight .ow,
+.highlight .o {
+    color: #00ff70;
+    font-weight: bold;
 }
 
-.highlight .k, .highlight .kv {
-  color: #adaaff;
-  font-weight: bold;
+.highlight .k,
+.highlight .kv {
+    color: #adaaff;
+    font-weight: bold;
 }
 
 .highlight .kn {
-  color: #ac8a8a;
-  font-weight: bold;
+    color: #ac8a8a;
+    font-weight: bold;
 }
 
 .highlight .s {
-  color: #ff6b90;
+    color: #ff6b90;
 }
 
 .highlight .nn {
-  color: #ff7b7b;
+    color: #ff7b7b;
 }
 
 .highlight .nb {
-  color: #00BFFF;
+    color: #00BFFF;
 }
 
 .highlight .mi {
-  color: #9ff;
+    color: #9ff;
 }
 
 /** Nav bar and footer **/
-nav, footer {
-  background: #0d1117;
-  padding-top: 1%;
-  padding-bottom: 1%;
+nav,
+footer {
+    background: #0d1117;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
-nav > a {
-  background: #1c6373;
-  color: white;
-  padding: 1%;
+nav>a {
+    background: #1c6373;
+    color: white;
+    padding: 1%;
 }
 
 footer {
-  margin-top: auto;
-  color: white;
+    margin-top: auto;
+    color: white;
 }
