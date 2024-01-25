@@ -24,10 +24,11 @@ code {
 
 .highlight {
   background-color: #392353;
-  padding: 0.25%;
+  padding: 0.5%;
   word-wrap: break-word;
   white-space: pre-wrap;
   word-break: break-word;
+  margin-bottom: 0.5%;
 }
 
 .highlight .ow, .highlight .o {
