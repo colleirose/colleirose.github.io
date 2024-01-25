@@ -25,6 +25,9 @@ code {
 .highlight {
   background-color: #392353;
   padding: 0.25%;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .highlight .ow, .highlight .o {
