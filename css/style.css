@@ -1,37 +1,6 @@
-/* Basic styling is in the head tag in default.html */
+/* Basic styling and common elements are in the head tag in default.html */
 
-/** Specific elements **/
-img {
-    border: 0;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-a:not(.post-title > a):not(nav > a) {
-    color: #f474ff;
-    text-decoration: none;
-}
-
-code {
-    background: #0d1117;
-    padding: 0.1% 0.2%;
-}
-
-.highlight>code {
-    background: unset;
-    padding: unset;
-}
-
-.highlight {
-    background-color: #392353;
-    padding: 0.5%;
-    word-wrap: break-word;
-    white-space: pre-wrap;
-    word-break: break-word;
-    margin-bottom: 0.5%;
-    padding-bottom: 0.25%;
-}
-
+/** Fix contrast issues with highlighted code blocks **/
 .highlight .ow,
 .highlight .o {
     color: #00ff70;
