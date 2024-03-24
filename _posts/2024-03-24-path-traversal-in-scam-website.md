@@ -4,8 +4,8 @@ title:  "A strange path traversal vulnerability in a USPS scam website"
 description: "Exploiting a PHP path traversal vulnerability found in a USPS scam website"
 author: "Colleirose"
 permalink: /path-traversal-in-scam-website
-date: 2024-03-25
-last_modified_at: 2024-03-25
+date: 2024-03-24
+last_modified_at: 2024-03-24
 ---
 
 Earlier this month, I encountered a scam website impersonating USPS at https://usps.parcelwatch-us.top (this link is not working at the time of writing but it might go up again later). Out of boredom, I decided to look at the web traffic when moving through the scam website, and noticed it sent data like `info-new.html` to a websocket and received HTML in response. My immediate thought was that there might be a path traversal vulnerability, so I sent /etc/passwd into that websocket, and sure enough, I got this back:
