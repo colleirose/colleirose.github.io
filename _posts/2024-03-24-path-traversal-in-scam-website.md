@@ -87,7 +87,7 @@ $server->run();
 
 Obviously, this is not the scam website, but is instead the PHP code behind the wbesocket used for fetching the files. I had looked through the newtwork traffic for a while, seeing paths like `/php/app/index/verify-info.php` and `/php/app/index/verify-card.php`. I wanted to get the contents of these files because they were where the stolen card data was being sent to, but uh, after figuring out the right paths (`../php/app/index/verify-info.php`, `../php/app/index/verify-card.php`), this is what it looked like:
 
-![Extremely obfuscated PHP code](/assets/img/obfuscated%20%php%code.png)
+![Extremely obfuscated PHP code](/assets/img/obfuscated%20%php%20code.png)
 
 I've made the files available for download at https://github.com/colleirose/colleirose/blob/main/verify-card.php and https://github.com/colleirose/colleirose/blob/main/verify-info.php. I had made some changes to the spacing in them to improve readability slightly but did not make any further progress in deobfuscation.
 
