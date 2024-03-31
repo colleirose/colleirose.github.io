@@ -8,7 +8,7 @@ date: 2024-03-24
 last_modified_at: 2024-03-24
 ---
 
-Earlier this month, I encountered a scam website impersonating USPS at https://usps.parcelwatch-us.top (this link is not working at the time of writing but it might go up again later). Out of boredom, I decided to look at the web traffic when moving through the scam website, and noticed it sent data like `info-new.html` to a websocket and received HTML in response. My immediate thought was that there might be a path traversal vulnerability, so I sent /etc/passwd into that websocket, and sure enough, I got this back:
+Earlier this month, I encountered a scam website impersonating USPS at hxxps://usps.parcelwatch-us[.]top (this link is not working at the time of writing but it might go up again later). Out of boredom, I decided to look at the web traffic when moving through the scam website, and noticed it sent data like `info-new.html` to a websocket and received HTML in response. My immediate thought was that there might be a path traversal vulnerability, so I sent /etc/passwd into that websocket, and sure enough, I got this back:
 
 ![Response from sending /etc/passwd to the websocket](/assets/img/exploiting%20path%20traversal%20vulnerabilities.png)
 
@@ -85,11 +85,11 @@ $server = \Ratchet\Server\IoServer::factory(
 $server->run();
 ```
 
-Obviously, this is not the scam website, but is instead the PHP code behind the wbesocket used for fetching the files. I had looked through the newtwork traffic for a while, seeing paths like `/php/app/index/verify-info.php` and `/php/app/index/verify-card.php`. I wanted to get the contents of these files because they were where the stolen card data was being sent to, but uh, after figuring out the right paths (`../php/app/index/verify-info.php`, `../php/app/index/verify-card.php`), this is what it looked like:
+Obviously, this is not the scam website, but is instead the PHP code behind the wbesocket used for fetching the files. I had looked through the network traffic for a while, seeing paths like `/php/app/index/verify-info.php` and `/php/app/index/verify-card.php`. I wanted to get the contents of these files because they were where the stolen card data was being sent to, but uh, after figuring out the right paths (`../php/app/index/verify-info.php`, `../php/app/index/verify-card.php`), this is what it looked like:
 
 ![Extremely obfuscated PHP code](/assets/img/obfuscated%20php%20code.png)
 
-I've made the files available for download at https://github.com/colleirose/colleirose/blob/main/verify-card.php and https://github.com/colleirose/colleirose/blob/main/verify-info.php. I had made some changes to the spacing in them to improve readability slightly but did not make any further progress in deobfuscation.
+I've made the files available for download at [https://github.com/colleirose/colleirose/blob/main/verify-card.php](https://github.com/colleirose/colleirose/blob/main/verify-card.php) and [https://github.com/colleirose/colleirose/blob/main/verify-info.php](https://github.com/colleirose/colleirose/blob/main/verify-card.php). I had made some changes to the spacing in them to improve readability slightly but did not make any further progress in deobfuscation.
 
 I asked other people to try out the URL but nobody else I contacted was unfortunately able to find anything useful:
 
@@ -99,7 +99,7 @@ I asked other people to try out the URL but nobody else I contacted was unfortun
 
 ![Discussion on Discord](/assets/img/discussion%20of%20php%20obfuscation%20on%20discord%203.png)
 
-I also used the https://urlscan.io "structurally similar hits" feature for this domain and found *many* identical or near-identical scam websites, most with the same vulnerability and all with the same general structure. You can find the scan at https://urlscan.io/result/c600342c-b96d-481a-8e92-ca0a5ee03856/ and the similar sites at https://urlscan.io/result/c600342c-b96d-481a-8e92-ca0a5ee03856/related/ (you need a URLScan account to see the list though). Some don't have the vulnerability, but most do. All of the ones that I could exploit the vulnerability on have the same obfuscated PHP files. I do wonder if they know and do not care about the path traversal vulnerability and the obfuscated files are their "solution" to it. I have noted slight differences in these other than the occassional slight design change or vulnerability patch, like different operating systems being used to host the scam (still all Linux distros) and sometimes there being references to some Chinese IP addresses in `/etc/hosts` (likely servers for receiving compromised data due to Chinese comments in `index.php` and some JS code that you can find with DevTools).
+I also used the "structurally similar hits" feature on [URLScan](https://urlscan.io) for this domain and found *many* identical or near-identical scam websites, most with the same vulnerability and all with the same general structure. You can find the scan at [urlscan.io/result/c600342c-b96d-481a-8e92-ca0a5ee03856](https://urlscan.io/result/c600342c-b96d-481a-8e92-ca0a5ee03856/) and the similar sites at [urlscan.io/result/c600342c-b96d-481a-8e92-ca0a5ee03856/related](https://urlscan.io/result/c600342c-b96d-481a-8e92-ca0a5ee03856/related/) (you need a URLScan account to see the list of similar sites). Some don't have the vulnerability, but most do. All of the ones that I could exploit the vulnerability on have the same obfuscated PHP files. I do wonder if they know and do not care about the path traversal vulnerability and the obfuscated files are their "solution" to it. I have noted slight differences in these other than the occassional slight design change or vulnerability patch, like different operating systems being used to host the scam (still all Linux distros) and sometimes there being references to some Chinese IP addresses in `/etc/hosts` (likely servers for receiving compromised data due to Chinese comments in `index.php` and some Chinese comments in JS code that you can find with DevTools).
 
 Another interesting thing is that I found some pages like `/php/app/admin/` on these domains, but the pages were either blank or consisted of HTML code that referenced JavaScript files that don't exist.
 
