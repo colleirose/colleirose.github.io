@@ -12,7 +12,7 @@ Earlier this month, I encountered a scam website impersonating USPS at hxxps://u
 
 ![Response from sending /etc/passwd to the websocket](/assets/img/exploiting%20path%20traversal%20vulnerabilities.png)
 
-I next tried putting `index.php` in and got this (the malformed text like `åéäºè¿å¶æ¶æ¯` was actually Chinese characters from the results I got in Burp Suite, but when looking at the results during test in Firefox DevTools, the text looked like gibberish and I didn't think much of it at the time, I thought it was maybe just a stupid scammer who put some nonsense in a comment not understanding what they were doing):
+I next tried putting `index.php` in and got this (the malformed text like `åéäºè¿å¶æ¶æ¯` was actually Chinese characters according to the results I got in Burp Suite, but when looking at the results in Firefox DevTools, the text looked like gibberish and I didn't think much of it at the time, I thought it was maybe just a stupid scammer who put some nonsense in a comment not understanding what they were doing):
 ```php
 <?php
 require '../vendor/autoload.php';
@@ -85,7 +85,7 @@ $server = \Ratchet\Server\IoServer::factory(
 $server->run();
 ```
 
-Obviously, this is not the scam website, but is instead the PHP code behind the wbesocket used for fetching the files. I had looked through the network traffic for a while, seeing paths like `/php/app/index/verify-info.php` and `/php/app/index/verify-card.php`. I wanted to get the contents of these files because they were where the stolen card data was being sent to, but uh, after figuring out the right paths (`../php/app/index/verify-info.php`, `../php/app/index/verify-card.php`), this is what it looked like:
+Obviously, this is not the scam website, but is instead the PHP code behind the websocket used for fetching the files. I had looked through the network traffic for a while, seeing paths like `/php/app/index/verify-info.php` and `/php/app/index/verify-card.php`. I wanted to get the contents of these files because they were where the stolen card data was being sent to, but uh, after figuring out the right paths (`../php/app/index/verify-info.php`, `../php/app/index/verify-card.php`), this is what it looked like:
 
 ![Extremely obfuscated PHP code](/assets/img/obfuscated%20php%20code.png)
 
