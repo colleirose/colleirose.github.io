@@ -12,14 +12,3 @@ Disallow: /
 User-agent: AdsBot-Google
 User-agent: Mediapartners-Google
 Disallow: /
-
-# Although not officially supported by the robots.txt spec, Googlebot supports pattern matching.
-# We don't want crawlers to be indexing pages with an HTML extension (we want them to be indexing the pages without the extension), so let's take advantage of that where possible.
-# This will only be a small issue given that we have a canocial tag for most pages, but it's best to play it safe
-User-agent: Googlebot
-Disallow: *.html
-Disallow: /*.html
-
-# In general, don't index files with an HTML extension
-Disallow: /index.html
-Disallow: /404.html
