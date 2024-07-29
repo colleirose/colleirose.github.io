@@ -13,12 +13,6 @@ User-agent: AdsBot-Google
 User-agent: Mediapartners-Google
 Disallow: /
 
-# Block proprietary models that will not comply with GPL
-# See https://www.eff.org/deeplinks/2023/12/no-robotstxt-how-ask-chatgpt-and-google-bard-not-use-your-website-training
-User-agent: GPTBot
-User-agent: Google-Extended
-Disallow: /
-
 # Although not officially supported by the robots.txt spec, Googlebot supports pattern matching.
 # We don't want crawlers to be indexing pages with an HTML extension (we want them to be indexing the pages without the extension), so let's take advantage of that where possible.
 # This will only be a small issue given that we have a canocial tag for most pages, but it's best to play it safe
