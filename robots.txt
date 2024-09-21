@@ -12,3 +12,8 @@ Disallow: /
 User-agent: AdsBot-Google
 User-agent: Mediapartners-Google
 Disallow: /
+
+# Useless pages
+User-agent: *
+Disallow: /LICENSE
+Disallow: /README.md
