@@ -1,0 +1,103 @@
+title: Rose Garden
+
+author:
+  name: Rose
+  url: https://colleirose.github.io
+
+date_format: "%B %-d, %Y"
+
+### --- Navbar image ---
+avatar: "/assets/img/evernight.png"
+
+### --- Footer ---
+
+# footer social links
+social-network-links:
+  github: colleirose
+  discord: "users/1430291951936208937"
+
+# How to display the link to your website in the footer
+url-pretty: "colleirose.github.io"
+
+# Add the website title to the title of every page
+title-on-all-pages: true
+
+# Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
+excerpt_length: 50
+
+# Whether or not to show an excerpt for every blog post in the feed page
+feed_show_excerpt: true
+
+# Whether or not to show a list of tags below each post preview in the feed page
+feed_show_tags: false # the tags.html page is also removed, can be added back if needed some time
+
+# Add a search button to the navbar
+post_search: true
+
+# Allow sub-menu items (second-level navigation menu items) to be longer than the top-level menu
+# If this setting is off, then long sub-menu words might get cut off
+# See https://github.com/daattali/beautiful-jekyll/issues/765 to understand the issue this setting can solve
+navbar-var-length: false
+
+### --- Colors ---
+
+# Suggest a colour for mobile browsers to use as the browser's theme. This is only supported by a few mobile browsers.
+mobile-theme-col: "rgb(36, 58, 99)"
+
+### General Jekyll/Ruby options
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-minifier
+  - jekyll-seo-tag
+
+# Jekyll SEO/meta tags options
+social:
+  name: Rose
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/evernight.png
+
+# Output options (more information on Jekyll's site)
+timezone: "America/Los_Angeles"
+markdown: kramdown
+highlighter: rouge
+permalink: /:title
+paginate: 5
+
+kramdown:
+  input: GFM
+
+# Default YAML values (more information on Jekyll's site)
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true  # add comments to all blog posts
+      social-share: true # add social media sharing buttons to all blog posts
+  -
+    scope:
+      path: "" # any file that's not a post will be a "page" layout by default
+    values:
+      layout: "page"
+
+# Exclude these files from production site
+exclude:
+  - CHANGELOG.md
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - Appraisals
+  - theme.gemspec
+  - docs/
+  - assets/css/bootstrap-social.css # these css files are included by index.scss and built into index.css, they arent ever used for anything
+  - assets/css/pygment_highlights.css

@@ -1,0 +1,85 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- start seo/rich embed tags -->
+  {% seo %}
+
+  <!-- jekyll seo doesnt add the canon url or og:url unless you manually specify permalink which is stupid -->
+  <!-- but i dont know why the jekyll seo plugin isnt adding the image -->
+  {% if page.id %}
+  <meta property="og:url" content="https://colleirose.github.io{{ page.url | absolute_url }}">
+  <link rel="canonical" href="https://colleirose.github.io{{ page.url | absolute_url }}">
+  {% else %}
+  <meta property="og:url" content="https://colleirose.github.io{{ page.url | absolute_url | strip_index }}">
+  <link rel="canonical" href="https://colleirose.github.io{{ page.url | absolute_url | strip_index }}">
+  {% endif %}
+
+  {%- capture img -%}
+    {%- if page.share-img -%}
+      {{ page.share-img }}
+    {%- elsif page.cover-img -%}
+      {%- if page.cover-img.first -%}
+        {{ page.cover-img[0].first.first }}
+      {%- else -%}
+        {{ page.cover-img }}
+      {%- endif -%}
+    {%- elsif page.thumbnail-img -%}
+      {{ page.thumbnail-img }}
+    {%- elsif site.avatar -%}
+      {{ site.avatar }}
+    {% endif %}
+  {%- endcapture -%}
+  {%- assign img=img | strip -%}
+
+  {% if img != "" %}
+  <meta property="og:image" content="{{ img | absolute_url }}">
+  <meta name="twitter:image" content="{{ img | absolute_url }}">
+  {% endif %}
+  <!-- end seo/rich embed tags -->
+
+  {% if site.mobile-theme-col %}
+  <meta name="theme-color" content="{{ site.mobile-theme-col }}">
+  {% endif %}
+
+  {% if layout.common-ext-css %}
+    {% for css in layout.common-ext-css %}
+      {% include ext-css.html css=css %}
+    {% endfor %}
+  {% endif %}
+
+  {% if layout.common-css %}
+    {% for css in layout.common-css %}
+      <link rel="stylesheet" href="{{ css | relative_url }}">
+    {% endfor %}
+  {% endif %}
+
+  {% if site.site-css %}
+    {% for css in site.site-css %}
+      <link rel="stylesheet" href="{{ css | relative_url }}">
+    {% endfor %}
+  {% endif %}
+
+  {% if page.ext-css %}
+    {% for css in page.ext-css %}
+      {% include ext-css.html css=css %}
+    {% endfor %}
+  {% endif %}
+  
+  {% if page.css %}
+    {% for css in page.css %}
+      <link rel="stylesheet" href="{{ css | relative_url }}">
+    {% endfor %}
+  {% endif %}
+
+  {% assign favicon_exists = site.static_files | where: "path", "/favicon.ico" | size %}
+  {% if favicon_exists == 1 %}
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" />
+  {% endif %}
+
+  {% if page.head-extra %}
+    {% for file in page.head-extra %}
+      {% include {{ file }} %}
+    {% endfor %}
+  {% endif %}
+</head>

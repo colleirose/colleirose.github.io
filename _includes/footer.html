@@ -1,0 +1,33 @@
+<footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      {% include social-networks-links.html %}
+      {% if page.footer-extra %}
+        <div class="footer-custom-content">
+          {% for file in page.footer-extra %}
+            {% include {{ file }} %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+
+
+      <p class="copyright text-muted">
+      {% if site.author %}
+        {{ site.author.name }}
+        &nbsp;&bull;&nbsp;
+      {% endif %}
+      {% if site.url-pretty %}
+        <span class="author-site">
+          <a href="{% if site.url-canonical %}{{ site.url-canonical }}{% else %}{{ '/' | absolute_url }}{% endif %}">{{ site.url-pretty }}</a>
+        </span>
+        &nbsp;&bull;&nbsp;
+      {% endif %}
+      © {{ site.time | date: '%Y' }}. Writings on this website are licensed under the <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="noreferrer nooopener nofollow">Creative Commons Attribution-NonCommercial 4.0 International license</a>. All original code is fully copyrighted with all rights reserved. For third-party notices and other information, see <a href="https://github.com/colleirose/colleirose.github.io/blob/main/LICENSE" rel="noreferrer nooopener nofollow">the LICENSE file</a>.
+       </p>
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
