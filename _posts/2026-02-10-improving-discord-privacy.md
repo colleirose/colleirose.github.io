@@ -4,7 +4,7 @@ title: Optimizing Discord for privacy and OPSEC
 description: Some information about Discord's privacy practices and how to reduce tracking on Discord.
 ---
 
-Especialy in light of Discord's new demands for ID verificatin, I've seen various discussions about Discord's privacy practices online and I feel that pointing all of this out now is important given how much privacy advice seems to consist of people repeating things they heard before without considering what they're saying.
+Especialy in light of Discord's new demands for ID verification, I've seen various discussions about Discord's privacy practices online and I feel that pointing all of this out now is important given how much privacy advice seems to consist of people repeating things they heard before without considering what they're saying.
 
 As you are probably aware by now, Discord is going to be requiring ID verification for some features. If you want to speak in Discord stage channels, view NSFW content, or disable the annoying message filter that sends mesages from new contacts to a separate inbox, you have to give Discord either an ID or a selfie. Discord's only explanation for why this will be secure after their previous third-party vendor got hacked and 70,000 records were exposed is that they are now giving even more third-party vendors access to the same information while terminating their contract with the one that was hacked previously. To my understanding, there has been no explanation of why these new vendors are more secure or even who they are.
 
