@@ -7,7 +7,7 @@ author:
 date_format: "%B %-d, %Y"
 
 ### --- Navbar image ---
-avatar: "/assets/img/evernight.png"
+avatar: "/assets/img/evernight.webp"
 
 ### --- Footer ---
 
@@ -31,9 +31,6 @@ feed_show_excerpt: true
 # Whether or not to show a list of tags below each post preview in the feed page
 feed_show_tags: false # the tags.html page is also removed, can be added back if needed some time
 
-# Add a search button to the navbar
-post_search: true
-
 # Allow sub-menu items (second-level navigation menu items) to be longer than the top-level menu
 # If this setting is off, then long sub-menu words might get cut off
 # See https://github.com/daattali/beautiful-jekyll/issues/765 to understand the issue this setting can solve
@@ -52,6 +49,10 @@ plugins:
   - jekyll-minifier
   - jekyll-seo-tag
 
+sass:
+    sass_dir: _sass
+    style: compressed
+
 # Jekyll SEO/meta tags options
 social:
   name: Rose
@@ -60,7 +61,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/img/evernight.png
+      image: /assets/img/evernight.webp
 
 # Output options (more information on Jekyll's site)
 timezone: "America/Los_Angeles"
@@ -99,5 +100,3 @@ exclude:
   - Appraisals
   - theme.gemspec
   - docs/
-  - assets/css/bootstrap-social.css # these css files are included by index.scss and built into index.css, they arent ever used for anything
-  - assets/css/pygment_highlights.css

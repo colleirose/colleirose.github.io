@@ -12,7 +12,7 @@ A lot of people seem to think this will only be a problem for people viewing NSF
 
 ![A Discord popup stating that the following message violated Discord's policy on child safety: "but 'repeat offenders of server rules will be punished appropriately.'" No context is given and the message contains no other content.](../assets/img/stupid-ban.png)
 
-Similarly, I'll reference <a href="https://www.theverge.com/tech/875309/discord-age-verification-global-roll-out?commentID=48fe06a1-35c6-482e-8246-2a05878bb3b5">this comment from an article on The Verge</a> (I will discuss the article in the next section):
+Similarly, I'll reference <a href="https://www.theverge.com/tech/875309/discord-age-verification-global-roll-out?commentID=48fe06a1-35c6-482e-8246-2a05878bb3b5">this comment from an article on <i>The Verge</i></a> (I will discuss the article in the next section):
 
 ![Screenshot of the following comment on The Verge: "'I haven't encountered it so it doesn't exist'. I'm in a server for a game that is targeting a T rating and has a large number of young members. We have extremely strict SFW rules. Discord forcibly applied the 18+ label and have ignored the server owner's repeated attempts to get it removed. They refuse to say why it was applied, but we believe people mass reported the server because the game prominently features LGBT characters. So you can continue doubling and tripling down after it being shown you're wrong, but it doesn't change the fact that you're wrong."](../assets/img/verge-comment.png)
 

@@ -1,15 +1,13 @@
 User-agent: *
 Disallow: /404.html
 Disallow: /assets/css/index.css.map
-Disallow: /assets/data/searchcorpus.json 
-# i'm pretty sure the search corpus is actually useless and not used for anything but ill figure that out later
 
 # see https://github.com/TecharoHQ/anubis/compare/main...colleirose:anubis:patch-1 
 # (will send the list upstream some time)
 
 # data harvesting
 User-agent: PiplBot
-User-agenet: PimEyesBot
+User-agent: PimEyesBot
 User-agent: VelenPublicWebCrawler
 User-agent: ZoominfoBot
 User-agent: linkfluence
