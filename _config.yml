@@ -19,17 +19,8 @@ social-network-links:
 # How to display the link to your website in the footer
 url-pretty: "colleirose.github.io"
 
-# Add the website title to the title of every page
-title-on-all-pages: true
-
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 50
-
-# Whether or not to show an excerpt for every blog post in the feed page
-feed_show_excerpt: true
-
-# Whether or not to show a list of tags below each post preview in the feed page
-feed_show_tags: false # the tags.html page is also removed, can be added back if needed some time
 
 # Allow sub-menu items (second-level navigation menu items) to be longer than the top-level menu
 # If this setting is off, then long sub-menu words might get cut off
