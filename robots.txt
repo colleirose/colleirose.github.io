@@ -1,6 +1,6 @@
 User-agent: *
 Disallow: /404.html
-Disallow: /assets/css/index.css.map
+Disallow: /assets/css/compile.css.map
 
 # see https://github.com/TecharoHQ/anubis/compare/main...colleirose:anubis:patch-1 
 # (will send the list upstream some time)

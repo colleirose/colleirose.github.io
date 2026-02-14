@@ -7,7 +7,7 @@
 // Colors
 $page-background-color: rgb(29, 41, 63);
 $text-color: white;
-$link-color: #ff4bc9;
+$link-color: #f65cc8;
 $hover-color: color.adjust($link-color, $lightness: 10%);
 
 $select-background-color: rgb(19, 108, 180);
@@ -19,13 +19,14 @@ $navbar-text-color: #fff;
 
 $footer-color: rgb(36, 58, 99);
 $footer-text-color: $text-color;
-$footer-link-color: $link-color;
-$footer-hover-color: $hover-color;
+$footer-link-color: #ff8cdc;
+$footer-hover-color: color.adjust($footer-link-color, $lightness: 10%);
 
-// Font and whatever
+$mid-color: rgb(241, 219, 219);
+
+// Font
 $body-font: "Roboto", "Arial", sans-serif;
 $header-font: $body-font;
-$mid-color: rgb(241, 219, 219);
 
 /* --- General --- */
 html {
@@ -414,6 +415,10 @@ footer {
 
   p.text-muted {
     color: $footer-text-color !important;
+
+    a {
+      color: $footer-link-color;
+    }
   }
 
   .footer-links {
@@ -428,7 +433,7 @@ footer {
 
   a:hover,
   a:focus {
-    color: $footer-hover-color;
+    color: $footer-hover-color !important;
   }
 
   .list-inline {
@@ -463,15 +468,18 @@ footer {
 @media (min-width: 768px) {
   footer {
     padding: 3.125rem 0;
-  }
-  footer .footer-links {
-    font-size: 1.125rem;
-  }
-  footer .copyright {
-    font-size: 1rem;
-  }
-  footer .footer-custom-content {
-    font-size: 1rem;
+
+    .footer-links {
+      font-size: 1.125rem;
+    }
+
+    .copyright {
+      font-size: 1rem;
+    }
+
+    .footer-custom-content {
+      font-size: 1rem;
+    }
   }
 }
 
