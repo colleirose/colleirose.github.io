@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: base
 title: Optimizing Discord for privacy and OPSEC
 description: Some information about Discord's privacy practices and how to reduce tracking on Discord.
 updated-notice: Updated on February 19th to reflect recent developments.
