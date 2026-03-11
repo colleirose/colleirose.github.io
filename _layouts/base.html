@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-  <script>
-    location.replace(`https://rossiflower.cc/${location.pathname}`);
-  </script>
-</head>
-<body>
-  <noscript>
-    Please visit <a href="https://rossiflower.cc">rossiflower.cc</a> instead, it's
-    the new domain.
-  </noscript>
-</body>
+  <head>
+    <script>
+      let url = "";
+      url = location.pathname;
+      if (!url.startsWith("/")) {
+        url = "/" + url;
+      }
+      location.replace(`https://rossiflower.cc/${location.pathname}`);
+    </script>
+  </head>
+  <body>
+    <noscript>
+      Please visit <a href="https://rossiflower.cc">rossiflower.cc</a> instead,
+      it's the new domain.
+    </noscript>
+  </body>
 </html>
