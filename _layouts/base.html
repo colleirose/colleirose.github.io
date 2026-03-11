@@ -4,10 +4,11 @@
     <script>
       let url = "";
       url = location.pathname;
+      // dont think this would happen but too lazy to look if this is how it works
       if (!url.startsWith("/")) {
         url = "/" + url;
       }
-      location.replace(`https://rossiflower.cc/${location.pathname}`);
+      location.replace(`https://rossiflower.cc${location.pathname}`);
     </script>
   </head>
   <body>
